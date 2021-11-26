@@ -1,5 +1,5 @@
 # ritl
-Relatives Import Tool
+Relatives Import Tool : How many time I was blocked by relative import problems. This time is over now...
 
 # Installation
 ```
@@ -8,7 +8,6 @@ pip install ritl
 
 # Usage
 
-How many time I was blocked by relative import problems. This time is over now...
 We just need to put :
 ```
 from ritl import relative_import
