@@ -1,6 +1,13 @@
 # ritl
 Relatives Import Tool
 
+# Installation
+```
+pip install ritl
+```
+
+# Usage
+
 How many time I was blocked by relative import problems. This time is over now...
 We just need to put :
 ```
