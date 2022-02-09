@@ -7,4 +7,4 @@
 
 __version__="0.0.2"
 
-from ritl import relative_import
+from ritl.relative_import import add, add_rel_imp
