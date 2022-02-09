@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-import sys
-import inspect
+from os.path import join, dirname, abspath, normpath
+import sys, inspect
 
-def add(file : str, path : str = ""):
+def add(file : str, path : str = "", verbose : bool = False):
     """@deprecated
     add a relative import from the current repository of file
     Is able to add a relative import from a sub repository thanks to path
@@ -31,9 +30,14 @@ def add(file : str, path : str = ""):
         example : '..' to go back. Defaults to "".
 
     """
-    sys.path.append(os.path.join(os.path.dirname(os.path.abspath(file)), path))
+    filedir = dirname(abspath(file))
+    added_directory = normpath(join(filedir, path))
+    if verbose:
+        print(f"[ritl] - Current directory : {filedir}")
+        print(f"[ritl] - Added directory : {added_directory}")
+    sys.path.append(added_directory)
     
-def add_rel_imp(path : str = ""):
+def add_rel_imp(path : str = "", verbose : bool = False):
     """add a relative import from the current file's directory
     Is able to add a relative import from a sub repository thanks to path
     Examples :
@@ -60,4 +64,6 @@ def add_rel_imp(path : str = ""):
         [type]: [description]
     """
     file = inspect.getmodule(inspect.stack()[-1][0]).__file__
-    sys.path.append(os.path.join(os.path.dirname(os.path.abspath(file)), path))
+    if verbose:
+        print(f"[ritl] - Current file : {file}")
+    add(file=file, path=path, verbose=verbose)
