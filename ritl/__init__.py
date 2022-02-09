@@ -5,6 +5,6 @@
     Relatives Import Tool
 """
 
-__version__="0.0.2"
+__version__="0.1.0"
 
 from ritl.relative_import import add, add_rel_imp
