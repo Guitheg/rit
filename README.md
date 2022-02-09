@@ -11,13 +11,13 @@ pip install ritl
 We just need to put :
 ```
 from ritl import relative_import
-relative_import.add(__file__)
+relative_import.add_rel_imp()
 ```
 and we can import easily our modules in the same directory of our file. Wherever you execute it.
 
 You can also add more directories, relative to your file directory :
 ```
-relative_import.add(__file__, "../utils")
+relative_import.add_rel_imp("../utils")
 ```
 
 This will allow you to relatively import your modules from other directory in utils
